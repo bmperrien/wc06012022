@@ -18,7 +18,17 @@ Notes:
 Single-digit numbers should be ordered the same regardless of direction.
 Numbers in the array should be kept the same order.
 */
-  //  public static int[] reorderDigits(int[] N, String str){
+    public static int[] reorderDigits(int[] N, String str){
+        int[] result = new int[N.length];
 
-   // }
+        if(str.equals("asc")){
+
+        }else if(str.equals("desc")){
+
+
+        }else{
+            System.out.println("You must specify asc or desc...");
+        }
+        return result;
+    }
 }
