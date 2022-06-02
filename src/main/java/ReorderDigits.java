@@ -22,12 +22,57 @@ Numbers in the array should be kept the same order.
         int[] result = new int[N.length];
 
         if(str.equals("asc")){
+            for(int i = 0; i < N.length; i++){
+                String currentInt = Integer.toString(N[i]);
+                char[] digits = currentInt.toCharArray();
+                char temp = 'x';
+                StringBuilder reorderInt = new StringBuilder();
+
+
+                //Sorting the array in ascending order
+                for(int j = 0; j < digits.length; j++){
+                    for(int k = j+1; k < digits.length; k++){
+                        if(digits[k] < digits[j]){
+                            temp = digits[j];
+                            digits[j] = digits[k];
+                            digits[k] = temp;
+                        }
+                    }
+                }
+                for(int h = 0; h < digits.length; h++){
+                    reorderInt.append(digits[h]);
+                }
+                result[i] = Integer.parseInt(reorderInt.toString());
+            }
 
         }else if(str.equals("desc")){
+            for(int i = 0; i < N.length; i++){
+                String currentInt = Integer.toString(N[i]);
+                char[] digits = currentInt.toCharArray();
+                char temp = 'x';
+                StringBuilder reorderInt = new StringBuilder();
+
+
+                //Sorting the array in ascending order
+                for(int j = 0; j < digits.length; j++){
+                    for(int k = j+1; k < digits.length; k++){
+                        if(digits[k] > digits[j]){
+                            temp = digits[j];
+                            digits[j] = digits[k];
+                            digits[k] = temp;
+                        }
+                    }
+                }
+                for(int h = 0; h < digits.length; h++){
+                    reorderInt.append(digits[h]);
+                }
+                result[i] = Integer.parseInt(reorderInt.toString());
+            }
 
 
         }else{
             System.out.println("You must specify asc or desc...");
+            return null;
         }
         return result;
     }
